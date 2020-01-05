@@ -403,9 +403,9 @@ window.addEventListener('DOMContentLoaded', function () {
 
 
     let carousel = document.querySelector(".slider-item");
-    carousel.style.backgroundImage = "url('img/carusel/BgPas.jpg')";
+    carousel.style.backgroundImage = "url('/img/carusel/BgPas.jpg')";
 
-    let bgImageMas = ["url('img/carusel/fourDish.jpg')", "url('img/carusel/BgOne.jpg')", "url('img/carusel/fourDish.jpg')", "url('img/carusel/BgPas.jpg')", "url('img/carusel/BgOne.jpg')", "url('img/carusel/fourDish.jpg')", "url('img/carusel/fourDish.jpg')"];
+    let bgImageMas = ["url('/img/carusel/fourDish.jpg')", "url('/img/carusel/BgOne.jpg')", "url('/img/carusel/fourDish.jpg')", "url('/img/carusel/BgPas.jpg')", "url('img/carusel/BgOne.jpg')", "url('img/carusel/fourDish.jpg')", "url('img/carusel/fourDish.jpg')"];
 
     var timerIdd = setTimeout(caruselAuto, 3000);
 
@@ -449,7 +449,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
     });
 
-    alert("jopa")
+ 
     // Today Special scroll effect
 
     window.addEventListener('scroll', () => {
