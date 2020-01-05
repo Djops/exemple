@@ -27,7 +27,7 @@ window.addEventListener('DOMContentLoaded', function () {
     });
 
 
-   alert("jopa")
+
 
     //  PopUp window "book your table btn"
 
