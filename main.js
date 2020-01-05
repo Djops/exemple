@@ -31,8 +31,6 @@ window.addEventListener('DOMContentLoaded', function () {
 
     //  PopUp window "book your table btn"
 
-
-
     let displayOfferTitle = document.getElementById("title__heading");
     let displayOffetTitleDesc = document.getElementById("title__desc");
     let orderTableBg = document.getElementById("orderTableBg");
@@ -159,139 +157,15 @@ window.addEventListener('DOMContentLoaded', function () {
     makeOrderBtn.addEventListener("click", () => {
 
 
-
-        // dayPopUp check
-
-        function dayPopUpCheck(dayResult) {
-
-            if (dayPopUp[0].value == dayPopUp.value) {
-                dayPopUp.style.backgroundColor = "red"
-                dayResult = false;
-                return dayResult;
-            } else {
-                dayResult = true;
-                return dayResult;
-            }
-
-
-        }
-
-        dayPopUpCheck()
-
-        // timePopUp check
-
-        function timePopUpCheck(timeResult) {
-
-            if (timePopUp[0].value == timePopUp.value) {
-                timePopUp.style.backgroundColor = "red"
-                timeResult = false;
-                return timeResult;
-            } else {
-                timeResult = true;
-                return timeResult;
-            }
-
-
-        }
-
-        timePopUpCheck()
-
-
-        // day check
-
-        function guestsPopUpCheck(guestsResult) {
-
-            if (guestsPopUp[0].value == guestsPopUp.value) {
-                guestsPopUp.style.backgroundColor = "red"
-                guestsResult = false;
-                return guestsResult;
-            } else {
-                guestsResult = true;
-                return guestsResult;
-            }
-
-
-        }
-
+        dayPopUpCheck();
+        timePopUpCheck();
         guestsPopUpCheck();
 
-
-
-
-        // name check
-
-        function namePopUpCheck(nameResult) {
-            if (namePopUp.value == "" || namePopUp.value == "Enter your name") {
-                namePopUp.style.backgroundColor = "#ff1c1c";
-                namePopUp.value = "Enter your name";
-                nameResult = false;
-                return nameResult;
-            } else if (!namePopUp.value.match(/^[а-яa-z]+$/i)) {
-                namePopUp.value = "onely text";
-                namePopUp.style.backgroundColor = "#ff1c1c";
-                nameResult = false;
-                return nameResult;
-            } else {
-                let namePopUpValue = namePopUp.value;
-                namePopUp.value = namePopUpValue;
-                nameResult = true;
-                return nameResult;
-            }
-        }
-
         namePopUpCheck()
-
-        // family name check
-
-        function familyNameCheck(familyNameResult) {
-            if (familyNamePopUp.value == "" || familyNamePopUp.value == "Enter your family name") {
-                familyNamePopUp.style.backgroundColor = "#ff1c1c";
-                familyNamePopUp.value = "Enter your family name";
-                familyNameResult = false;
-                return familyNameResult;
-
-            } else if (!familyNamePopUp.value.match(/^[а-яa-z]+$/i)) {
-                familyNamePopUp.value = "onely text";
-                familyNamePopUp.style.backgroundColor = "#ff1c1c";
-                familyNameResult = false;
-                return familyNameResult;
-            } else {
-                let familyNameValue = familyNamePopUp.value;
-                familyNamePopUp.value = familyNameValue;
-                familyNameResult = true;
-                return familyNameResult;
-            }
-        }
-
         familyNameCheck()
-
-        // phoneNumber check 
-
-        function phoneNumberCheck(phoneResult) {
-            if (phonePopUp.value == "") {
-                phonePopUp.value = "Enter phone number";
-                phonePopUp.style.backgroundColor = "#ff1c1c";
-                phonePopUp.style.color = "5c5c5c";
-                phoneResult = false;
-                return phoneResult;
-
-            } else if (!phonePopUp.value.match(/^\d+$/)) {
-                phonePopUp.value = "onely numbers";
-                phonePopUp.style.backgroundColor = "#ff1c1c";
-                phoneResult = false;
-                return phoneResult;
-            } else {
-                let phoneNumberValue = phonePopUp.value;
-                phonePopUp.value = phoneNumberValue;
-                phoneResult = true;
-                console.log(phoneResult)
-                return phoneResult;
-
-            }
-
-        }
-
         phoneNumberCheck()
+
+
 
 
         if (namePopUpCheck() == true) {
@@ -345,7 +219,7 @@ window.addEventListener('DOMContentLoaded', function () {
                 "message": orderMessage
             }
 
-
+             
             // close popUpWindow 
 
             function clearInputs() {
@@ -361,7 +235,7 @@ window.addEventListener('DOMContentLoaded', function () {
                 inputsBlokcSecond.style.display = "none";
 
                 let reservation__text = document.getElementById("reservation__text");
-                reservation__text.innerHTML = "Thank you for your reservation, we call you back soon " + namePopUp.value + ".";
+                reservation__text.innerHTML = "Thank you for your reservation, we call you back soon" + namePopUp.value + ".";
                 reservation__text.classList.add("reservation__text__order");
 
                 let message__title = document.getElementById("message__title");
@@ -473,9 +347,142 @@ window.addEventListener('DOMContentLoaded', function () {
     })
 
 
+
+
+
 });
 
 
+
+
+
+
+
+
+        // dayPopUp check
+
+        function dayPopUpCheck() {
+
+            if (dayPopUp[0].value == dayPopUp.value) {
+                dayPopUp.style.backgroundColor = "red";
+               return false;
+            } 
+
+            return true;
+        }
+
+       
+
+        // timePopUp check
+
+        function timePopUpCheck() {
+
+            if (timePopUp[0].value == timePopUp.value) {
+                timePopUp.style.backgroundColor = "red";
+               return false;
+            } 
+            
+            return true;
+        }
+
+
+
+        // guests check
+
+        function guestsPopUpCheck() {
+
+            if (guestsPopUp[0].value == guestsPopUp.value) {
+                guestsPopUp.style.backgroundColor = "red";
+                return false;
+            } 
+
+            return true;
+        }
+
+
+
+        // name check
+
+        function namePopUpCheck() {
+            if (namePopUp.value == "" || namePopUp.value == "Enter your name") {
+                namePopUp.style.backgroundColor = "#ff1c1c";
+                namePopUp.value = "Enter your name";
+                return false;
+            } 
+            
+            if (!namePopUp.value.match(/^[а-яa-z]+$/i)) {
+                namePopUp.value = "onely text";
+                namePopUp.style.backgroundColor = "#ff1c1c";
+                return false;
+            } 
+            return true;
+        }
+
+      
+
+        // family name check
+
+        function familyNameCheck(familyNameResult) {
+
+            
+            if (familyNamePopUp.value == "" || familyNamePopUp.value == "Enter your family name") {     
+                familyNamePopUp.style.backgroundColor = "#ff1c1c";
+                familyNamePopUp.value = "Enter your family name";
+                familyNameResult = false;
+                return familyNameResult;
+
+            } else if (!familyNamePopUp.value.match(/^[а-яa-z]+$/i)) {
+                familyNamePopUp.value = "onely text";
+                familyNamePopUp.style.backgroundColor = "#ff1c1c";
+                familyNameResult = false;
+                return familyNameResult;
+            } else {
+                let familyNameValue = familyNamePopUp.value;
+                familyNamePopUp.value = familyNameValue;
+                familyNameResult = true;
+                return familyNameResult;
+            }
+        }
+
+       
+
+        // phoneNumber check 
+
+        function phoneNumberCheck(phoneResult) {
+            if (phonePopUp.value == "") {
+                phonePopUp.value = "Enter phone number";
+                phonePopUp.style.backgroundColor = "#ff1c1c";
+                phonePopUp.style.color = "5c5c5c";
+                phoneResult = false;
+                return phoneResult;
+
+            } else if (!phonePopUp.value.match(/^\d+$/)) {
+                phonePopUp.value = "onely numbers";
+                phonePopUp.style.backgroundColor = "#ff1c1c";
+                phoneResult = false;
+                return phoneResult;
+            } else {
+                let phoneNumberValue = phonePopUp.value;
+                phonePopUp.value = phoneNumberValue;
+                phoneResult = true;
+                console.log(phoneResult)
+                return phoneResult;
+
+            }
+
+        }
+
+        
+
+
+
+
+//  менять стили не Js а через сами стили в CSS стилиями одельными.
+
+//  const DIPSLAY_NONE = "none"  вместо строк и стилей.
+
+
+//  244 line Enter your name зделать через переменую ! .
 
 
 
