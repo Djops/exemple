@@ -449,6 +449,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
     });
 
+    alert("jopa")
     // Today Special scroll effect
 
     window.addEventListener('scroll', () => {
