@@ -167,11 +167,9 @@ window.addEventListener('DOMContentLoaded', function () {
 //  send order user data
 
 
-// https://www.youtube.com/watch?v=c3qWHnJJbSY
-
 
 function sendOrder(orderUserData) {
-    console.log(orderUserData);   // undefaind  он невидит дату  TODO
+    console.log(orderUserData);   //  он невидит дату  TODO
     fetch("some.php", {
         method: "post",
         body: orderUserData
