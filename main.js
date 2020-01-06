@@ -104,8 +104,8 @@ window.addEventListener('DOMContentLoaded', function () {
 
     const ifTrueColor = "black";
     const ifTrueColorBgc = "#87f78c";
-   
-   
+
+
     makeOrderBtn.addEventListener("click", () => {
 
         let namePopUProof = namePopUpCheck();
@@ -151,7 +151,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
             //  close popUpWindow 
             //  PopUpClearInputs.js
-            clearInputs();     
+            clearInputs();
 
 
             sendOrder();
@@ -163,25 +163,44 @@ window.addEventListener('DOMContentLoaded', function () {
 });
 
 
+
 //  send order user data
 
 
+// https://www.youtube.com/watch?v=c3qWHnJJbSY
+
+
 function sendOrder(orderUserData) {
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'some.php');
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xhr.send('param=' + JSON.stringify(orderUserData));
-    xhr.onreadystatechange = function () {
-        if (this.readyState == 4) {
-            if (this.status == 200) {
-                console.log(xhr.responseText);
-            }
-            else {
-           console.log("some erorr")
-            }
-        }
-    };
-}
+    console.log(orderUserData);
+    fetch("some.php", {
+        method: "post",
+        body: orderUserData
+    }).then(function (response) {
+        return response.text();
+    }).then(function (text) {
+        console.log(text);
+    }).catch(function (error) {
+        console.log(error);
+    });
+};
+
+
+// function sendOrder(orderUserData) {
+//     var xhr = new XMLHttpRequest();
+//     xhr.open('POST', 'some.php');
+//     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+//     xhr.send('param=' + JSON.stringify(orderUserData));
+//     xhr.onreadystatechange = function () {
+//         if (this.readyState == 4) {
+//             if (this.status == 200) {
+//                 console.log(xhr.responseText);
+//             }
+//             else {
+//            console.log("some erorr")
+//             }
+//         }
+//     };
+// }
 
 
 
