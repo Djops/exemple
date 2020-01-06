@@ -171,7 +171,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
 
 function sendOrder(orderUserData) {
-    console.log(orderUserData);
+    console.log(orderUserData);   // undefaind  он невидит дату  TODO
     fetch("some.php", {
         method: "post",
         body: orderUserData
