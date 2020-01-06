@@ -4,9 +4,6 @@ window.addEventListener('DOMContentLoaded', function () {
 
 
 
-
-
-
     //  PopUp window "book your table btn"
 
     let displayOfferTitle = document.getElementById("title__heading");
@@ -135,27 +132,25 @@ window.addEventListener('DOMContentLoaded', function () {
     makeOrderBtn.addEventListener("click", () => {
 
 
-        let namePopUpproof = namePopUpCheck();
-       let  dayPopUpCheck();
-        timePopUpCheck();
-        guestsPopUpCheck();
-
-
-        familyNameCheck()
-        phoneNumberCheck()
+        let namePopUProof = namePopUpCheck();
+        let dayPopUpProof = dayPopUpCheck();
+        let timePopUpProof = timePopUpCheck();
+        let guestsPopUpProog = guestsPopUpCheck();
+        let familyNameProof = familyNameCheck();
+        let phoneNumberProof = phoneNumberCheck();
 
 
 
-        if (namePopUpChecked == true) {
+        if (namePopUProof == true) {
             namePopUp.style.color = "5c5c5c";
             namePopUp.style.backgroundColor = "#87f78c";
         } 
-        if (familyNameCheck() == true) {
+        if (familyNameProof == true) {
             familyNamePopUp.style.color = "5c5c5c";
             familyNamePopUp.style.backgroundColor = "#87f78c";
         } 
 
-        if (phoneNumberCheck() == true) {
+        if (phoneNumberProof == true) {
             phonePopUp.style.color = "5c5c5c";
             phonePopUp.style.backgroundColor = "#87f78c";
         } 
@@ -163,31 +158,23 @@ window.addEventListener('DOMContentLoaded', function () {
 
 
 
-        if (namePopUpCheck() == true &&
-            familyNameCheck() == true &&
-            phoneNumberCheck() == true &&
-            dayPopUpCheck() == true &&
-            timePopUpCheck() == true &&
-            guestsPopUpCheck() == true) {
+        if (namePopUProof == true &&
+            dayPopUpProof == true &&
+            familyNameProof == true &&
+            timePopUpProof == true &&
+            guestsPopUpProog == true &&
+            phoneNumberProof == true) {
 
             //  TODO : 
 
-            let orderName = namePopUp.value;
-            let orderFamilyName = familyNamePopUp.value;
-            let orderPhone = phonePopUp.value;
-            let orderDay = dayPopUp.value;
-            let orderTime = timePopUp.value;
-            let orderGuests = guestsPopUp.value;
-            let orderMessage = messagePopUp.value;
-
             let orderUserData = {
                 "name": namePopUp.value,
-                "familyName": orderFamilyName,
-                "phone": orderPhone,
-                "day": orderDay,
-                "time": orderTime,
-                "guests": orderGuests,
-                "message": orderMessage
+                "familyName": familyNamePopUp.value,
+                "phone": phonePopUp.value,
+                "day": dayPopUp.value,
+                "time": timePopUp.value,
+                "guests": guestsPopUp.value,
+                "message": messagePopUp.value
             }
             // close popUpWindow 
             clearInputs();
