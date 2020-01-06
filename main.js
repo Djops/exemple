@@ -3,28 +3,6 @@
 window.addEventListener('DOMContentLoaded', function () {
 
 
-    //  nav
-
-    let menuItem = document.getElementById("menu__dispaly-block")
-    let menuToggle = document.getElementById("menu__toggle");
-
-
-    menuToggle.addEventListener("click", function () {
-        if (menuItem.style.display != "block") {
-            menuItem.style.display = "block"
-            console.log("j")
-        } else if (menuItem.style.display = "block") {
-            menuItem.style.display = "none"
-        }
-    });
-
-    window.addEventListener('resize', function () {
-        if (document.documentElement.clientWidth > 600) {
-            menuItem.style.display = "block"
-        } else if (document.documentElement.clientWidth < 617) {
-            menuItem.style.display = "none"
-        }
-    });
 
 
 
@@ -104,8 +82,8 @@ window.addEventListener('DOMContentLoaded', function () {
     })
 
 
-    // PopUp Window Clint Data
 
+    
     let makeOrderBtn = document.getElementById("makeOrderBtn");
     let namePopUp = document.getElementById("namePopUp");
     let familyNamePopUp = document.getElementById("familyNamePopUp");
@@ -157,37 +135,30 @@ window.addEventListener('DOMContentLoaded', function () {
     makeOrderBtn.addEventListener("click", () => {
 
 
-        dayPopUpCheck();
+        let namePopUpproof = namePopUpCheck();
+       let  dayPopUpCheck();
         timePopUpCheck();
         guestsPopUpCheck();
 
-        namePopUpCheck()
+
         familyNameCheck()
         phoneNumberCheck()
 
 
 
-
-        if (namePopUpCheck() == true) {
+        if (namePopUpChecked == true) {
             namePopUp.style.color = "5c5c5c";
             namePopUp.style.backgroundColor = "#87f78c";
-        } else {
-            namePopUpCheck()
-        }
-
+        } 
         if (familyNameCheck() == true) {
             familyNamePopUp.style.color = "5c5c5c";
             familyNamePopUp.style.backgroundColor = "#87f78c";
-        } else {
-            familyNameCheck()
-        }
+        } 
 
         if (phoneNumberCheck() == true) {
             phonePopUp.style.color = "5c5c5c";
             phonePopUp.style.backgroundColor = "#87f78c";
-        } else {
-            phoneNumberCheck()
-        }
+        } 
 
 
 
@@ -199,6 +170,7 @@ window.addEventListener('DOMContentLoaded', function () {
             timePopUpCheck() == true &&
             guestsPopUpCheck() == true) {
 
+            //  TODO : 
 
             let orderName = namePopUp.value;
             let orderFamilyName = familyNamePopUp.value;
@@ -208,9 +180,8 @@ window.addEventListener('DOMContentLoaded', function () {
             let orderGuests = guestsPopUp.value;
             let orderMessage = messagePopUp.value;
 
-
             let orderUserData = {
-                "name": orderName,
+                "name": namePopUp.value,
                 "familyName": orderFamilyName,
                 "phone": orderPhone,
                 "day": orderDay,
@@ -218,53 +189,10 @@ window.addEventListener('DOMContentLoaded', function () {
                 "guests": orderGuests,
                 "message": orderMessage
             }
-
-             
             // close popUpWindow 
+            clearInputs();
+            sendOrder();
 
-            function clearInputs() {
-
-
-                messagePopUp.style.display = "none";
-
-                makeOrderBtn.style.display = "none";
-                let inputsBlokcFirst = document.getElementById("inputsBlokcFirst");
-                inputsBlokcFirst.style.display = "none";
-
-                let inputsBlokcSecond = document.getElementById("inputsBlokcSecond");
-                inputsBlokcSecond.style.display = "none";
-
-                let reservation__text = document.getElementById("reservation__text");
-                reservation__text.innerHTML = "Thank you for your reservation, we call you back soon" + namePopUp.value + ".";
-                reservation__text.classList.add("reservation__text__order");
-
-                let message__title = document.getElementById("message__title");
-                message__title.style.display = "none";
-            }
-
-
-            clearInputs()
-
-
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', 'some.php');
-            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-            xhr.send('param=' + JSON.stringify(orderUserData));
-            xhr.onreadystatechange = function () {
-                if (this.readyState == 4) {
-                    if (this.status == 200) {
-                        console.log(xhr.responseText);
-                    }
-                    else {
-                        // let body = document.getElementById("body");
-                        // body.classList.add("body");
-
-                        // let bodyWrappc = document.getElementById("bodyWrappc");
-                        // bodyWrappc.classList.add("bodyWrappc")
-
-                    }
-                }
-            };
 
         } else {
             console.log("No")
@@ -313,24 +241,25 @@ window.addEventListener('DOMContentLoaded', function () {
     // carousel scroll effect
 
     window.addEventListener('scroll', () => {
+        
         if (scrollY < 300) {
-
             carousel.style.backgroundPositionY = -scrollY - 30 + "px";
 
         } else if (scrollY >= 200) {
             return false;
         }
-
     });
 
- 
+
+
     // Today Special scroll effect
+    let bgSpecialSection = document.getElementById("special");
+    let foodOneTable = document.getElementById("foodOne");
+    let foodTwoTable = document.getElementById("foodTwo");
+
+
 
     window.addEventListener('scroll', () => {
-
-        let bgSpecialSection = document.getElementById("special");
-        let foodOneTable = document.getElementById("foodOne");
-        let foodTwoTable = document.getElementById("foodTwo");
 
         foodOneTable.style.marginTop = 0 + "px";
         foodTwoTable.style.marginTop = 0 + "px";
@@ -353,126 +282,167 @@ window.addEventListener('DOMContentLoaded', function () {
 });
 
 
+function sendOrder(orderUserData){
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'some.php');
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.send('param=' + JSON.stringify(orderUserData));
+    xhr.onreadystatechange = function () {
+        if (this.readyState == 4) {
+            if (this.status == 200) {
+                console.log(xhr.responseText);
+            }
+            else {
+                // let body = document.getElementById("body");
+                // body.classList.add("body");
 
+                // let bodyWrappc = document.getElementById("bodyWrappc");
+                // bodyWrappc.classList.add("bodyWrappc")
 
-
-
-
-
-        // dayPopUp check
-
-        function dayPopUpCheck() {
-
-            if (dayPopUp[0].value == dayPopUp.value) {
-                dayPopUp.style.backgroundColor = "red";
-               return false;
-            } 
-
-            return true;
-        }
-
-       
-
-        // timePopUp check
-
-        function timePopUpCheck() {
-
-            if (timePopUp[0].value == timePopUp.value) {
-                timePopUp.style.backgroundColor = "red";
-               return false;
-            } 
-            
-            return true;
-        }
-
-
-
-        // guests check
-
-        function guestsPopUpCheck() {
-
-            if (guestsPopUp[0].value == guestsPopUp.value) {
-                guestsPopUp.style.backgroundColor = "red";
-                return false;
-            } 
-
-            return true;
-        }
-
-
-
-        // name check
-
-        function namePopUpCheck() {
-            if (namePopUp.value == "" || namePopUp.value == "Enter your name") {
-                namePopUp.style.backgroundColor = "#ff1c1c";
-                namePopUp.value = "Enter your name";
-                return false;
-            } 
-            
-            if (!namePopUp.value.match(/^[а-яa-z]+$/i)) {
-                namePopUp.value = "onely text";
-                namePopUp.style.backgroundColor = "#ff1c1c";
-                return false;
-            } 
-            return true;
-        }
-
-      
-
-        // family name check
-
-        function familyNameCheck(familyNameResult) {
-
-            
-            if (familyNamePopUp.value == "" || familyNamePopUp.value == "Enter your family name") {     
-                familyNamePopUp.style.backgroundColor = "#ff1c1c";
-                familyNamePopUp.value = "Enter your family name";
-                familyNameResult = false;
-                return familyNameResult;
-
-            } else if (!familyNamePopUp.value.match(/^[а-яa-z]+$/i)) {
-                familyNamePopUp.value = "onely text";
-                familyNamePopUp.style.backgroundColor = "#ff1c1c";
-                familyNameResult = false;
-                return familyNameResult;
-            } else {
-                let familyNameValue = familyNamePopUp.value;
-                familyNamePopUp.value = familyNameValue;
-                familyNameResult = true;
-                return familyNameResult;
             }
         }
+    };
+}
 
-       
 
-        // phoneNumber check 
 
-        function phoneNumberCheck(phoneResult) {
-            if (phonePopUp.value == "") {
-                phonePopUp.value = "Enter phone number";
-                phonePopUp.style.backgroundColor = "#ff1c1c";
-                phonePopUp.style.color = "5c5c5c";
-                phoneResult = false;
-                return phoneResult;
+function clearInputs() {
 
-            } else if (!phonePopUp.value.match(/^\d+$/)) {
-                phonePopUp.value = "onely numbers";
-                phonePopUp.style.backgroundColor = "#ff1c1c";
-                phoneResult = false;
-                return phoneResult;
-            } else {
-                let phoneNumberValue = phonePopUp.value;
-                phonePopUp.value = phoneNumberValue;
-                phoneResult = true;
-                console.log(phoneResult)
-                return phoneResult;
 
-            }
+    messagePopUp.style.display = "none";
 
-        }
+    makeOrderBtn.style.display = "none";
+    let inputsBlokcFirst = document.getElementById("inputsBlokcFirst");
+    inputsBlokcFirst.style.display = "none";
 
-        
+    let inputsBlokcSecond = document.getElementById("inputsBlokcSecond");
+    inputsBlokcSecond.style.display = "none";
+
+    let reservation__text = document.getElementById("reservation__text");
+    reservation__text.innerHTML = "Thank you for your reservation, we call you back soon" + namePopUp.value + ".";
+    reservation__text.classList.add("reservation__text__order");
+
+    let message__title = document.getElementById("message__title");
+    message__title.style.display = "none";
+}
+
+
+
+
+// dayPopUp check
+
+function dayPopUpCheck() {
+
+    if (dayPopUp[0].value == dayPopUp.value) {
+        dayPopUp.style.backgroundColor = "red";
+        return false;
+    }
+
+    return true;
+}
+
+
+
+// timePopUp check
+
+function timePopUpCheck() {
+
+    if (timePopUp[0].value == timePopUp.value) {
+        timePopUp.style.backgroundColor = "red";
+        return false;
+    }
+
+    return true;
+}
+
+
+
+// guests check
+
+function guestsPopUpCheck() {
+
+    if (guestsPopUp[0].value == guestsPopUp.value) {
+        guestsPopUp.style.backgroundColor = "red";
+        return false;
+    }
+
+    return true;
+}
+
+
+
+// name check
+
+function namePopUpCheck() {
+    if (namePopUp.value == "" || namePopUp.value == "Enter your name") {
+        namePopUp.style.backgroundColor = "#ff1c1c";
+        namePopUp.value = "Enter your name";
+        return false;
+    }
+
+    if (!namePopUp.value.match(/^[а-яa-z]+$/i)) {
+        namePopUp.value = "onely text";
+        namePopUp.style.backgroundColor = "#ff1c1c";
+        return false;
+    }
+    return true;
+}
+
+
+
+// family name check
+
+function familyNameCheck(familyNameResult) {
+
+
+    if (familyNamePopUp.value == "" || familyNamePopUp.value == "Enter your family name") {
+        familyNamePopUp.style.backgroundColor = "#ff1c1c";
+        familyNamePopUp.value = "Enter your family name";
+        familyNameResult = false;
+        return familyNameResult;
+
+    } else if (!familyNamePopUp.value.match(/^[а-яa-z]+$/i)) {
+        familyNamePopUp.value = "onely text";
+        familyNamePopUp.style.backgroundColor = "#ff1c1c";
+        familyNameResult = false;
+        return familyNameResult;
+    } else {
+        let familyNameValue = familyNamePopUp.value;
+        familyNamePopUp.value = familyNameValue;
+        familyNameResult = true;
+        return familyNameResult;
+    }
+}
+
+
+
+// phoneNumber check 
+
+function phoneNumberCheck(phoneResult) {
+    if (phonePopUp.value == "") {
+        phonePopUp.value = "Enter phone number";
+        phonePopUp.style.backgroundColor = "#ff1c1c";
+        phonePopUp.style.color = "5c5c5c";
+        phoneResult = false;
+        return phoneResult;
+
+    } else if (!phonePopUp.value.match(/^\d+$/)) {
+        phonePopUp.value = "onely numbers";
+        phonePopUp.style.backgroundColor = "#ff1c1c";
+        phoneResult = false;
+        return phoneResult;
+    } else {
+        let phoneNumberValue = phonePopUp.value;
+        phonePopUp.value = phoneNumberValue;
+        phoneResult = true;
+        console.log(phoneResult)
+        return phoneResult;
+
+    }
+
+}
+
+
 
 
 
