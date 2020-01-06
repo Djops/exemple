@@ -1,15 +1,24 @@
+const namePopUpValidation = "Enter your name";
+const familyNamePopUpValidation = "Enter your family name";
+const phonePopUpValidation = "Enter phone number";
+const validationColor = "#fe0000";
+const ifNumbers = "onely text";
+const ifString = "onely numbers"
+
+
+
 // name check
 
 function namePopUpCheck() {
-    if (namePopUp.value == "" || namePopUp.value == "Enter your name") {
-        namePopUp.style.backgroundColor = "#ff1c1c";
-        namePopUp.value = "Enter your name";
+    if (namePopUp.value == "" || namePopUp.value == namePopUpValidation) {
+        namePopUp.style.backgroundColor = validationColor;
+        namePopUp.value = namePopUpValidation;
         return false;
     }
 
     if (!namePopUp.value.match(/^[а-яa-z]+$/i)) {
-        namePopUp.value = "onely text";
-        namePopUp.style.backgroundColor = "#ff1c1c";
+        namePopUp.value = ifNumbers;
+        namePopUp.style.backgroundColor = validationColor;
         return false;
     }
     return true;
@@ -22,23 +31,21 @@ function namePopUpCheck() {
 function familyNameCheck(familyNameResult) {
 
 
-    if (familyNamePopUp.value == "" || familyNamePopUp.value == "Enter your family name") {
-        familyNamePopUp.style.backgroundColor = "#ff1c1c";
-        familyNamePopUp.value = "Enter your family name";
+    if (familyNamePopUp.value == "" || familyNamePopUp.value == familyNamePopUpValidation) {
+        familyNamePopUp.style.backgroundColor = validationColor;
+        familyNamePopUp.value = familyNamePopUpValidation;
         familyNameResult = false;
         return familyNameResult;
 
-    } else if (!familyNamePopUp.value.match(/^[а-яa-z]+$/i)) {
-        familyNamePopUp.value = "onely text";
-        familyNamePopUp.style.backgroundColor = "#ff1c1c";
+    }
+    if (!familyNamePopUp.value.match(/^[а-яa-z]+$/i)) {
+        familyNamePopUp.value = ifNumbers;
+        familyNamePopUp.style.backgroundColor = validationColor;
         familyNameResult = false;
         return familyNameResult;
-    } else {
-        let familyNameValue = familyNamePopUp.value;
-        familyNamePopUp.value = familyNameValue;
-        familyNameResult = true;
-        return familyNameResult;
     }
+
+    return true;
 }
 
 
@@ -47,25 +54,20 @@ function familyNameCheck(familyNameResult) {
 
 function phoneNumberCheck(phoneResult) {
     if (phonePopUp.value == "") {
-        phonePopUp.value = "Enter phone number";
-        phonePopUp.style.backgroundColor = "#ff1c1c";
-        phonePopUp.style.color = "5c5c5c";
+        phonePopUp.value = phonePopUpValidation;
+        phonePopUp.style.backgroundColor = validationColor;
         phoneResult = false;
-        return phoneResult;
-
-    } else if (!phonePopUp.value.match(/^\d+$/)) {
-        phonePopUp.value = "onely numbers";
-        phonePopUp.style.backgroundColor = "#ff1c1c";
-        phoneResult = false;
-        return phoneResult;
-    } else {
-        let phoneNumberValue = phonePopUp.value;
-        phonePopUp.value = phoneNumberValue;
-        phoneResult = true;
-        console.log(phoneResult)
         return phoneResult;
 
     }
+    if (!phonePopUp.value.match(/^\d+$/)) {
+        phonePopUp.value = ifString;
+        phonePopUp.style.backgroundColor = validationColor;
+        phoneResult = false;
+        return phoneResult;
+    }
+
+    return true;
 
 }
 
@@ -75,10 +77,9 @@ function phoneNumberCheck(phoneResult) {
 function dayPopUpCheck() {
 
     if (dayPopUp[0].value == dayPopUp.value) {
-        dayPopUp.style.backgroundColor = "red";
+        dayPopUp.style.backgroundColor = validationColor;
         return false;
     }
-
     return true;
 }
 
@@ -89,10 +90,9 @@ function dayPopUpCheck() {
 function timePopUpCheck() {
 
     if (timePopUp[0].value == timePopUp.value) {
-        timePopUp.style.backgroundColor = "red";
+        timePopUp.style.backgroundColor = validationColor;
         return false;
     }
-
     return true;
 }
 
@@ -103,9 +103,8 @@ function timePopUpCheck() {
 function guestsPopUpCheck() {
 
     if (guestsPopUp[0].value == guestsPopUp.value) {
-        guestsPopUp.style.backgroundColor = "red";
+        guestsPopUp.style.backgroundColor = validationColor;
         return false;
     }
-
     return true;
 }

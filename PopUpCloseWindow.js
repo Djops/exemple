@@ -1,5 +1,7 @@
     // Close PopUp Window
 
+    let closePopUp = document.getElementById("closePopUp");
+
     closePopUp.addEventListener("click", () => {
         orderTableBg.style.opacity = "0";
         displayOfferTitle.style.opacity = "1";
@@ -24,15 +26,15 @@
 
         function clearPopUpInputs() {
 
-            namePopUp.style.backgroundColor = "#ffffff";
+            namePopUp.style.backgroundColor = inputsOriginColor;
             namePopUp.readOnly = false;
             namePopUp.value = ""
 
-            familyNamePopUp.style.backgroundColor = "#ffffff";
+            familyNamePopUp.style.backgroundColor = inputsOriginColor;
             familyNamePopUp.readOnly = false;
             familyNamePopUp.value = ""
 
-            phonePopUp.style.backgroundColor = "#ffffff";
+            phonePopUp.style.backgroundColor = inputsOriginColor;
             phonePopUp.readOnly = false;
             phonePopUp.value = ""
 
@@ -43,9 +45,9 @@
             timePopUp.selectedIndex = orig_default;
             guestsPopUp.selectedIndex = orig_default;
 
-            dayPopUp.style.backgroundColor = "#ffffff"
-            timePopUp.style.backgroundColor = "#ffffff"
-            guestsPopUp.style.backgroundColor = "#ffffff"
+            dayPopUp.style.backgroundColor = inputsOriginColor;
+            timePopUp.style.backgroundColor = inputsOriginColor;
+            guestsPopUp.style.backgroundColor = inputsOriginColor;
 
         }
 
