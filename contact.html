@@ -15,6 +15,10 @@
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Sintony:400,700&display=swap"
         rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/403e80fcfb.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -78,9 +82,12 @@
             </div>
         </div>
 
+
+
+
         <!-- pop-up window -->
 
-        <div id="orderTableBg" class="orderTable__bg">
+         <div id="orderTableBg" class="orderTable__bg">
             <div class="wrapper">
                 <div class="container">
                     <div class="row">
@@ -166,9 +173,6 @@
                                 wrap="virtual"></textarea>
                         </div>
 
-
-
-
                         <button id="makeOrderBtn" class="makeOrderBtn">
                             make an order
                         </button>
@@ -176,9 +180,66 @@
                 </div>
             </div>
 
-        </div>
+        </div> 
 
     </header>
+
+    <section class="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="midLine">
+
+                    </div>
+                    <h1 class="contactTitle">
+                        CONTACTS
+                    </h1>
+                </div>
+
+                <div class="col-lg-3">
+                    <i class="fas fa-phone-volume fa-2x">
+                        <span class="phoneNumb">
+                            0504501679
+                        </span>
+                    </i>
+
+                </div>
+
+                <div class="col-lg-3">
+                    <i class="fas fa-road fa-2x">
+                        <span class="address">
+                            Tel Aviv </br>
+                            <span class="addressDecoration">Artur Rupin 22</span>
+                        </span>
+                    </i>
+                </div>
+
+                <div class="col-lg-3">
+                    <i class="far fa-clock fa-2x">
+                        <span class="workingHours">
+                            Am Pm </br> <span class="workingHoursDecoration"> Sunday and Monday: </br> <span
+                                    class="workingHoursDecoration"> 5:00PM – 10:15PM</span>
+                                </br><span class="workingHoursDecoration"> Tuesday to Saturday:</span> </br> <span
+                                    class="workingHoursDecoration"> 5:00PM – 10:45PM</span>
+                            </span>
+                    </i>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <section class="map">
+        <div class="container">
+            <div class="row">
+                <div id="mapIpa" class="mapStyle">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 
 
 
@@ -188,14 +249,20 @@
         crossorigin="anonymous"></script>
 
     <!-- JavaScript -->
-    <script src="contact.js"></script>
+    <!-- <script src="contact.js"></script> -->
 
     <script src="nav.js"></script>
+    <script src ="contact.js"></script>
     <script src="PopUpOrderCheck.js"></script>
     <script src="PopUpClearInputs.js"></script>
     <script src="PopUpCloseWindow.js"></script>
 
 
+    <!-- google map script -->
+<!-- 
+    <script async defer src ="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsPXfo_60nGuIOLW2E_qozNVzPjDOd9Oc&callback=initMap"></script> -->
+
+  
 </body>
 
 </html>
