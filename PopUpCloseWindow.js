@@ -1,6 +1,8 @@
     // Close PopUp Window
 
     let closePopUp = document.getElementById("closePopUp");
+    let displayOfferTitle = document.getElementById("title__heading");
+    let displayOffetTitleDesc = document.getElementById("title__desc");
 
     closePopUp.addEventListener("click", () => {
         orderTableBg.style.opacity = "0";
