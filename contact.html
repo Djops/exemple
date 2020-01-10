@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Luxury restaurant</title>
+    <link rel="stylesheet" href="contact.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Sintony:400,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Header - Nav -->
+
+    <header id="header" class="header">
+        <div class="main-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <img src="img/logo.png" alt="Luxury Restaurant" class="logo">
+                    </div>
+                    <div id="menu__toggle" class="menu__toggle">
+                        Menu
+                    </div>
+                    <div id="menu__dispaly-block" class="col-lg-6">
+                        <nav>
+                            <ul id="menu" class="menu d-flex justify-content-between">
+                                <li class="menu__item">
+                                    <a href="#" id="buttonHome" class="Menu__item_link">
+                                        Home
+                                    </a>
+                                </li>
+
+                                <li class="menu__item">
+                                    <a href="#" class="Menu__item_link">
+                                        reservation
+                                    </a>
+                                </li>
+                                <li class="menu__item">
+                                    <a href="#" class="Menu__item_link">
+                                        recipe
+                                    </a>
+                                </li>
+                                <li class="menu__item">
+                                    <a href="#" class="Menu__item_link">
+                                        blog
+                                    </a>
+                                </li>
+                                <li class="menu__item">
+                                    <a href="#" class="Menu__item_link">
+                                        pages
+                                    </a>
+                                </li>
+                                <li class="menu__item">
+                                    <a href="#" class="Menu__item_link">
+                                        contact
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-lg-3">
+                        <button id="bookTableBtn" class="book d-flex justify-content-center">
+                            <span class="book__icone"></span>
+                            book your table
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- pop-up window -->
+
+        <div id="orderTableBg" class="orderTable__bg">
+            <div class="wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div id="closePopUp" class="close__PopUp">
+                            close
+                        </div>
+                        <div class="col-lg-12">
+                            <h1 class="reservation__title">
+                                RESERVATION
+                            </h1>
+                        </div>
+                        <p id="reservation__text" class="reservation__text">
+                            You can book a table in our restaurant via special online-form. Just apply few important
+                            details
+                            - desirable date, time, number of guests and your contacts.
+                            The seats at the bar and on the terrace are reserved for walk-ins only.
+                            To reserve directly via phone, using following number:
+                            0504501645
+                        </p>
+
+
+                        <div id="inputsBlokcFirst" class="col-lg-5 ">
+                            <div id="inputWrapper" class="inputs__wrapper">
+                                <input type="text" id="namePopUp" class="name" placeholder="Name">
+                                <input type="text" id="familyNamePopUp" class="familyName" placeholder=" Family name">
+                                <input type="text" id="phonePopUp" class="phoneNumber" placeholder="Phone number">
+                            </div>
+                        </div>
+                        <div id="inputsBlokcSecond" class="col-lg-5">
+                            <div class="order__wrapper">
+                                <form action="formdata" method="post" name="form1">
+                                    <select id="dayPopUp" class="order__day" name="list1">
+                                        <option value="Day">Day of the week</option>
+                                        <option value="Monday">Monday</option>
+                                        <option value="Tuesday">Tuesday</option>
+                                        <option value="Wednesday">Wednesday</option>
+                                        <option value="Thursday">Thursday</option>
+                                        <option value="Friday">Friday</option>
+                                        <option value="Saturday">Saturday</option>
+                                        <option value="Sunday">Sunday</option>
+                                    </select>
+                                </form>
+
+                                <form action="formdata" method="post" name="form1">
+                                    <select id="timePopUp" class="order__time" name="list1">
+                                        <option value="0">Time</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                        <option value="17">17</option>
+                                        <option value="18">18</option>
+                                        <option value="19">19</option>
+                                        <option value="20">20</option>
+                                        <option value="21">21</option>
+                                        <option value="22">22</option>
+                                        <option value="23">23</option>
+                                    </select>
+                                </form>
+
+                                <form action="formdata" method="post" name="form1">
+                                    <select id="guestsPopUp" class="order__guests" name="list2">
+                                        <option value="0">Number of guests</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                    </select>
+                                </form>
+
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <p id="message__title" class="message__title">Your wishes</p>
+                            <textarea id="messagePopUp" class="message" name="mesage" rows="4" cols="55"
+                                wrap="virtual"></textarea>
+                        </div>
+
+
+
+
+                        <button id="makeOrderBtn" class="makeOrderBtn">
+                            make an order
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+
+    <!-- JavaScript -->
+    <script src="contact.js"></script>
+
+    <script src="nav.js"></script>
+    <script src="PopUpOrderCheck.js"></script>
+    <script src="PopUpClearInputs.js"></script>
+    <script src="PopUpCloseWindow.js"></script>
+
+
+</body>
+
+</html>
