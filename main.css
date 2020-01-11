@@ -158,16 +158,16 @@ li {
 }
 
 .close__PopUp {
-    padding-top: 10px;
-    padding-left: 15px;
-    top: 5px;
-    right: 5px;
-    color: #fff;
-    cursor: pointer;
-    font-family: 'Sintony', sans-serif;
-    font-size: 12px;
+    padding-top        : 10px;
+    padding-left       : 15px;
+    top                : 5px;
+    right              : 5px;
+    color              : #fff;
+    cursor             : pointer;
+    font-family        : 'Sintony', sans-serif;
+    font-size          : 12px;
     transition-duration: 0.4s;
-    align-items: left;
+    align-items        : left;
 
 }
 
@@ -194,30 +194,30 @@ li {
     font-size     : 28px;
     text-align    : center;
     margin-top    : 70px;
-    text-align: left;
-    margin-left: 83px;
+    text-align    : left;
+    margin-left   : 83px;
 }
 
 
 .reservation__text {
     text-align : left;
     margin-left: 20px;
-    width: 340px;
+    width      : 340px;
     color      : #fff;
     font-family: 'Sintony', sans-serif;
     font-size  : 14px;
 }
 
-.reservation__text__order{
+.reservation__text__order {
     text-align : center;
     margin-left: 0px;
     font-size  : 24px;
 }
 
 .inputs__wrapper {
-    padding-top: 40px;
-    margin-left: 50px;
-    display: flex;
+    padding-top   : 40px;
+    margin-left   : 50px;
+    display       : flex;
     flex-direction: column;
 }
 
@@ -255,35 +255,35 @@ input {
     font-family  : 'Sintony', sans-serif;
     margin-top   : 40px;
     margin-bottom: 5px;
-    margin-left: 128px;
+    margin-left  : 128px;
 }
 
 .message {
-   margin-left: -424px;
-   width: 350px;
+    margin-left   : -424px;
+    width         : 350px;
     height        : 80px;
     padding-bottom: 20px;
 }
 
 
 .makeOrderBtn {
-    font-family: 'Sintony', sans-serif;
-    color: #fff;
-    font-size: 14px;
-    border-radius: 3px;
-    background: #fea100;
-    text-transform: uppercase;
-    border: 0;
-    padding: 15px 0;
-    display: block;
-    cursor: pointer;
-    width: 200px;
-    font-weight: 700;
-    margin-top: -5px;
-    margin-top: 60px;
-    outline: none;
+    font-family        : 'Sintony', sans-serif;
+    color              : #fff;
+    font-size          : 14px;
+    border-radius      : 3px;
+    background         : #fea100;
+    text-transform     : uppercase;
+    border             : 0;
+    padding            : 15px 0;
+    display            : block;
+    cursor             : pointer;
+    width              : 200px;
+    font-weight        : 700;
+    margin-top         : -5px;
+    margin-top         : 60px;
+    outline            : none;
     transition-duration: 0.6s;
-    margin-left: 90px;
+    margin-left        : 90px;
 }
 
 .makeOrderBtn:hover {
@@ -552,6 +552,16 @@ div .food-images__wrapper {
 }
 
 
+
+/* Map */
+
+.mapStyle{
+    width: 100%;
+    height: 600px;
+    
+}
+
+
 /* footer */
 
 .footer {
@@ -559,8 +569,7 @@ div .food-images__wrapper {
     color         : #93989e;
     font-size     : 13px;
     text-transform: uppercase;
-    margin-left   : 15px;
-    margin-right  : 15px;
+   
 }
 
 .socials {
@@ -686,189 +695,189 @@ div .food-images__wrapper {
 
 /* carusle */
 
-@media(min-width:600px){
+@media(min-width:600px) {
     .slider-item.of {
 
         background-size    : 1903px;
         height             : 765px;
         transition-duration: 1.1s;
         overflow-y         : hidden;
-    
+
     }
-    
+
 }
 
 /* popUpOrderWindow */
 
-@media(min-width: 600px){
-    
-
-
-.orderTable__bg {
-
-    width              : 100%;
-    height             : 100%;
-    position           : absolute;
-    z-index            : 1;
-    opacity            : 0;
-    transition-duration: 0.4s;
-}
-
-.close__PopUp {
-    padding-top        : 10px;
-    padding-right      : 15px;
-    margin             : 0 0 0 auto;
-    top                : 5px;
-    right              : 5px;
-    color              : #fff;
-    cursor             : pointer;
-    font-family        : 'Sintony', sans-serif;
-    font-size          : 12px;
-    transition-duration: 0.4s;
-
-}
-
-
-.close__PopUp:hover {
-    color: #ff1e00;
-}
+@media(min-width: 600px) {
 
 
 
-.wrapper {
-    text-align      : center;
-    margin          : 0 auto;
-    width           : 800px;
-    height          : 765px;
-    background-color: rgba(0, 0, 0, 0.8);
-}
+    .orderTable__bg {
+
+        width              : 100%;
+        height             : 100%;
+        position           : absolute;
+        z-index            : 1;
+        opacity            : 0;
+        transition-duration: 0.4s;
+    }
+
+    .close__PopUp {
+        padding-top        : 10px;
+        padding-right      : 15px;
+        margin             : 0 0 0 auto;
+        top                : 5px;
+        right              : 5px;
+        color              : #fff;
+        cursor             : pointer;
+        font-family        : 'Sintony', sans-serif;
+        font-size          : 12px;
+        transition-duration: 0.4s;
+
+    }
 
 
-.reservation__title {
-    padding-bottom: 10px;
-    color         : #fff;
-    font-family   : 'Sintony', sans-serif;
-    font-size     : 28px;
-    text-align    : center;
-    margin-top    : 70px;
-    margin-left: 0px;
-}
-
-.reservation__text {
-    text-align : left;
-    margin     : 0 auto;
-    width      : 600px;
-    color      : #fff;
-    font-family: 'Sintony', sans-serif;
-    font-size  : 14px;
-}
-
-.reservation__text__order{
-    text-align : center;
-    margin-top: 30px;
-    font-size  : 20px;
-}
+    .close__PopUp:hover {
+        color: #ff1e00;
+    }
 
 
-.inputs__wrapper {
-    padding-top: 40px;
-    margin-left: 85px;
-}
 
-.order__wrapper {
-    padding-top: 59px;
-    margin-left: 100px;
-}
-
-.name {
-    padding-left: 5px;
-    margin-top  : 20px;
-}
-
-.familyName {
-    padding-left: 5px;
-    margin-top  : 25px;
-}
-
-.phoneNumber {
-    padding-left: 7px;
-    margin-top  : 25px;
-}
-
-input {
-    margin-bottom  : 20px;
-    width          : 250px;
-    text-decoration: none;
-    border         : none;
-}
-
-.message__title {
-    font-size    : 14px;
-    color        : #fff;
-    text-align   : center;
-    font-family  : 'Sintony', sans-serif;
-    margin-top   : 40px;
-    margin-bottom: 5px;
-    margin-left: 0px;
-}
-
-.message {
-    width         : 600px;
-    height        : 80px;
-    padding-bottom: 20px;
-    margin: 0 auto;
-}
+    .wrapper {
+        text-align      : center;
+        margin          : 0 auto;
+        width           : 800px;
+        height          : 765px;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
 
 
-.makeOrderBtn {
-    font-family        : 'Sintony', sans-serif;
-    color              : #fff;
-    font-size          : 14px;
-    border-radius      : 3px;
-    background         : #fea100;
-    text-transform     : uppercase;
-    border             : 0;
-    padding            : 15px 0;
-    display            : block;
-    cursor             : pointer;
-    width              : 200px;
-    font-weight        : 700;
-    margin-top         : -5px;
-    margin             : 0 auto;
-    margin-top         : 60px;
-    outline            : none;
-    transition-duration: 0.6s;
-}
+    .reservation__title {
+        padding-bottom: 10px;
+        color         : #fff;
+        font-family   : 'Sintony', sans-serif;
+        font-size     : 28px;
+        text-align    : center;
+        margin-top    : 70px;
+        margin-left   : 0px;
+    }
 
-.makeOrderBtn:hover {
-    background: #fe5000;
+    .reservation__text {
+        text-align : left;
+        margin     : 0 auto;
+        width      : 600px;
+        color      : #fff;
+        font-family: 'Sintony', sans-serif;
+        font-size  : 14px;
+    }
 
-}
+    .reservation__text__order {
+        text-align: center;
+        margin-top: 30px;
+        font-size : 20px;
+    }
 
 
-.order__day {
-    width       : 250px;
-    height      : 26px;
-    margin-top  : 1px;
-    padding-left: 3px;
-    border      : none !important;
-}
+    .inputs__wrapper {
+        padding-top: 40px;
+        margin-left: 85px;
+    }
 
-.order__time {
-    width       : 250px;
-    margin-top  : 25px;
-    height      : 26px;
-    padding-left: 3px;
-    border      : none !important;
-}
+    .order__wrapper {
+        padding-top: 59px;
+        margin-left: 100px;
+    }
 
-.order__guests {
-    width       : 250px;
-    margin-top  : 25px;
-    height      : 26px;
-    padding-left: 3px;
-    border      : none !important;
-}
+    .name {
+        padding-left: 5px;
+        margin-top  : 20px;
+    }
+
+    .familyName {
+        padding-left: 5px;
+        margin-top  : 25px;
+    }
+
+    .phoneNumber {
+        padding-left: 7px;
+        margin-top  : 25px;
+    }
+
+    input {
+        margin-bottom  : 20px;
+        width          : 250px;
+        text-decoration: none;
+        border         : none;
+    }
+
+    .message__title {
+        font-size    : 14px;
+        color        : #fff;
+        text-align   : center;
+        font-family  : 'Sintony', sans-serif;
+        margin-top   : 40px;
+        margin-bottom: 5px;
+        margin-left  : 0px;
+    }
+
+    .message {
+        width         : 600px;
+        height        : 80px;
+        padding-bottom: 20px;
+        margin        : 0 auto;
+    }
+
+
+    .makeOrderBtn {
+        font-family        : 'Sintony', sans-serif;
+        color              : #fff;
+        font-size          : 14px;
+        border-radius      : 3px;
+        background         : #fea100;
+        text-transform     : uppercase;
+        border             : 0;
+        padding            : 15px 0;
+        display            : block;
+        cursor             : pointer;
+        width              : 200px;
+        font-weight        : 700;
+        margin-top         : -5px;
+        margin             : 0 auto;
+        margin-top         : 60px;
+        outline            : none;
+        transition-duration: 0.6s;
+    }
+
+    .makeOrderBtn:hover {
+        background: #fe5000;
+
+    }
+
+
+    .order__day {
+        width       : 250px;
+        height      : 26px;
+        margin-top  : 1px;
+        padding-left: 3px;
+        border      : none !important;
+    }
+
+    .order__time {
+        width       : 250px;
+        margin-top  : 25px;
+        height      : 26px;
+        padding-left: 3px;
+        border      : none !important;
+    }
+
+    .order__guests {
+        width       : 250px;
+        margin-top  : 25px;
+        height      : 26px;
+        padding-left: 3px;
+        border      : none !important;
+    }
 
 }
 

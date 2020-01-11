@@ -188,53 +188,11 @@ function sendOrder(orderUserData) {
 };
 
 
-// function sendOrder(orderUserData) {
-//     var xhr = new XMLHttpRequest();
-//     xhr.open('POST', 'some.php');
-//     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-//     xhr.send('param=' + JSON.stringify(orderUserData));
-//     xhr.onreadystatechange = function () {
-//         if (this.readyState == 4) {
-//             if (this.status == 200) {
-//                 console.log(xhr.responseText);
-//             }
-//             else {
-//            console.log("some erorr")
-//             }
-//         }
-//     };
-// }
 
-
-
-
-//  менять стили не Js а через сами стили в CSS стилиями одельными.
-
-//  const DIPSLAY_NONE = "none"  вместо строк и стилей.
-
-
-//  244 line Enter your name зделать через переменую ! .
-
-
-
-//  спросить если тут надо phoneNumberCheck(phoneResult)  ?
-//  и если надо возврошать return phoneResult; или просто return false ?
-
-// function phoneNumberCheck(phoneResult) {
-//     if (phonePopUp.value == "") {
-//         phonePopUp.value = phonePopUpValidation;
-//         phonePopUp.style.backgroundColor = validationColor;
-//         phoneResult = false;
-//         return phoneResult;
-
-//     }
-//     if (!phonePopUp.value.match(/^\d+$/)) {
-//         phonePopUp.value = ifString;
-//         phonePopUp.style.backgroundColor = validationColor;
-//         phoneResult = false;
-//         return phoneResult;
-//     }
-
-//     return true;
-
-// }
+function initMap(){
+    let taNg = { lat:32.0631459, lng:34.7683656};
+  let mapIpa = new google.maps.Map(
+      document.getElementById("mapIpa"),{zoom: 16, center:taNg}
+  );
+  
+}
