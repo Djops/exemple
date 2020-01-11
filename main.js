@@ -2,6 +2,7 @@
 
 window.addEventListener('DOMContentLoaded', function () {
 
+
     //  gallery
 
     let carousel = document.querySelector(".slider-item");
@@ -91,7 +92,7 @@ window.addEventListener('DOMContentLoaded', function () {
     })
 
 
-    
+
 
 
     //  Make an Order Btn
@@ -188,11 +189,28 @@ function sendOrder(orderUserData) {
 };
 
 
+    // google map
 
-function initMap(){
-    let taNg = { lat:32.0631459, lng:34.7683656};
-  let mapIpa = new google.maps.Map(
-      document.getElementById("mapIpa"),{zoom: 16, center:taNg}
-  );
-  
+
+function initMap() {
+    let telAvivNg = { lat: 32.0631459, lng: 34.7683656 };
+    let mapIpa = new google.maps.Map(
+        document.getElementById("mapIpa"), { zoom: 16, center: telAvivNg }
+    );
+
+
+
+    let marker = new google.maps.Marker({
+        position: { lat: 32.0631459, lng: 34.7683656 },
+        mapIpa: mapIpa,
+        title: 'Hello World!',
+        icon: 'pin.png',
+        animation: google.maps.Animation.BOUNCE,
+        draggable: true
+
+    });
 }
+
+
+
+
